@@ -17,9 +17,18 @@ public class ProductsModelController {
     @CrossOrigin
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
-    Page<ProductsModel> get (Pageable pageable){
-        return productsModelRepository.findAll(pageable);
+    Page<ProductsModel> get (Pageable pageable, @RequestParam(value = "g", required = false, defaultValue = "0") Long g){
+        return productsModelRepository.findAll(pageable, g);
     }
+
+    @CrossOrigin
+    @RequestMapping(method = RequestMethod.GET, path = "/{id}")
+    @ResponseBody
+    ProductsModel productsModel (@PathVariable("id") Long id){
+        return productsModelRepository.findOne(id);
+    }
+
+
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST)

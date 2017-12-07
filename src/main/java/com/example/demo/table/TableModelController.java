@@ -1,4 +1,4 @@
-package com.example.demo.group;
+package com.example.demo.table;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -8,46 +8,46 @@ import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin
 @Component
-@RequestMapping("/group")
-public class GroupModelController {
+@RequestMapping("/table")
+public class TableModelController {
 
     @Autowired
-    GroupModelRepository groupModelRepository;
+    TableModelRepository tableModelRepository;
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
-    Page<GroupModel> get (Pageable pageable){
-        return groupModelRepository.findAll(pageable);
+    Page<TableModel> get (Pageable pageable){
+        return tableModelRepository.findAll(pageable);
     }
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.GET, path = "/{id}")
     @ResponseBody
-    GroupModel groupModel (@PathVariable("id") Long id){
-        return groupModelRepository.findOne(id);
+    TableModel getId(@PathVariable("id") Long id){
+        return tableModelRepository.findOne(id);
     }
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
-    GroupModel post (@RequestBody GroupModel groupModel) throws Exception{
-        return groupModelRepository.save(groupModel);
+    TableModel post (@RequestBody TableModel tableModel) throws Exception{
+        return tableModelRepository.save(tableModel);
     }
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.DELETE, path = "/{id}")
     @ResponseBody
     String delete (@PathVariable("id") Long id){
-        groupModelRepository.delete(id);
+        tableModelRepository.delete(id);
+
         return "DELETED";
     }
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.PUT, path = "/{id}")
     @ResponseBody
-    GroupModel put (@PathVariable("id") Long id, @RequestBody GroupModel groupModel) throws Exception{
-        return groupModelRepository.save(groupModel);
+    TableModel put(@PathVariable("id") Long id, @RequestBody TableModel tableModel) throws Exception{
+        return tableModelRepository.save(tableModel);
     }
-
 }

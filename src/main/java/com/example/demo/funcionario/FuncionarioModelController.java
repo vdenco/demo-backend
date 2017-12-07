@@ -21,6 +21,7 @@ public class FuncionarioModelController {
         return funcionarioModelRepository.findAll(pageable);
     }
 
+
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody

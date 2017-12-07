@@ -1,4 +1,4 @@
-package com.example.demo.group;
+package com.example.demo.sale;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -8,46 +8,46 @@ import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin
 @Component
-@RequestMapping("/group")
-public class GroupModelController {
+@RequestMapping("/sale")
+public class SaleModelController {
 
     @Autowired
-    GroupModelRepository groupModelRepository;
+    SaleModelRepository saleModelRepository;
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
-    Page<GroupModel> get (Pageable pageable){
-        return groupModelRepository.findAll(pageable);
+    Page<SaleModel> get (Pageable pageable){
+        return saleModelRepository.findAll(pageable);
     }
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.GET, path = "/{id}")
     @ResponseBody
-    GroupModel groupModel (@PathVariable("id") Long id){
-        return groupModelRepository.findOne(id);
+    SaleModel getId(@PathVariable("id") Long id) {
+        return saleModelRepository.findOne(id);
     }
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
-    GroupModel post (@RequestBody GroupModel groupModel) throws Exception{
-        return groupModelRepository.save(groupModel);
+    SaleModel post (@RequestBody SaleModel saleModel) throws Exception{
+        return saleModelRepository.save(saleModel);
     }
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.DELETE, path = "/{id}")
     @ResponseBody
     String delete (@PathVariable("id") Long id){
-        groupModelRepository.delete(id);
+        saleModelRepository.delete(id);
+
         return "DELETED";
     }
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.PUT, path = "/{id}")
     @ResponseBody
-    GroupModel put (@PathVariable("id") Long id, @RequestBody GroupModel groupModel) throws Exception{
-        return groupModelRepository.save(groupModel);
+    SaleModel put(@PathVariable("id") Long id, @RequestBody SaleModel saleModel) throws Exception{
+        return saleModelRepository.save(saleModel);
     }
-
 }

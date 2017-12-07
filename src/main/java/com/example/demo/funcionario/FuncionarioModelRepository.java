@@ -9,6 +9,4 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @CrossOrigin
 public interface FuncionarioModelRepository extends PagingAndSortingRepository<FuncionarioModel, Long> {
 
-    @Query("select p from FuncionarioModel p")
-    Page<FuncionarioModel> findAll(Pageable pageable);
 }

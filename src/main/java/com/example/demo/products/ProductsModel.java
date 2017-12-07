@@ -16,9 +16,9 @@ public class ProductsModel {
     String name;
 
     @OneToOne
-    GroupModel grupo;
+    GroupModel group;
 
-    BigDecimal prince;
+    BigDecimal price;
 
     @OneToOne
     PrintersModel printer;
@@ -47,20 +47,20 @@ public class ProductsModel {
         this.name = name;
     }
 
-    public GroupModel getGrupo() {
-        return grupo;
+    public GroupModel getGroup() {
+        return group;
     }
 
-    public void setGrupo(GroupModel grupo) {
-        this.grupo = grupo;
+    public void setGrupo(GroupModel group) {
+        this.group = group;
     }
 
-    public BigDecimal getPrince() {
-        return prince;
+    public BigDecimal getPrice() {
+        return price;
     }
 
-    public void setPrince(BigDecimal prince) {
-        this.prince = prince;
+    public void setPrice(BigDecimal prince) {
+        this.price = prince;
     }
 
     public PrintersModel getPrinter() {

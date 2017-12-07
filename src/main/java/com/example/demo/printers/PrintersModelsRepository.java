@@ -9,6 +9,4 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @CrossOrigin
 public interface PrintersModelsRepository extends PagingAndSortingRepository<PrintersModel, Long> {
 
-    @Query("select p from PrintersModel p")
-    Page<PrintersModel> findAll(Pageable pageable);
 }

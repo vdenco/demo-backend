@@ -23,6 +23,13 @@ public class PrinterModelController {
     }
 
     @CrossOrigin
+    @RequestMapping(method = RequestMethod.GET, path = "/{id}")
+    @ResponseBody
+    PrintersModel getId(@PathVariable("id") Long id){
+        return printersModelsRepository.findOne(id);
+    }
+
+    @CrossOrigin
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
     PrintersModel post (@RequestBody PrintersModel printersModel) throws Exception {

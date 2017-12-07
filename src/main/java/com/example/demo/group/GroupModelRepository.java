@@ -9,6 +9,4 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @CrossOrigin
 public interface GroupModelRepository extends PagingAndSortingRepository<GroupModel, Long> {
 
-    @Query("Select p from GroupModel p")
-    Page<GroupModel> findAll(Pageable pageable);
 }
