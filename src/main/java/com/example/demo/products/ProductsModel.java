@@ -31,6 +31,12 @@ public class ProductsModel {
 
     String unit;
 
+    Boolean preferred;
+
+    String ncm;
+
+    String csosn;
+
     public Long getId() {
         return id;
     }
@@ -101,5 +107,29 @@ public class ProductsModel {
 
     public void setUnit(String unit) {
         this.unit = unit;
+    }
+
+    public Boolean getPreferred() {
+        return preferred;
+    }
+
+    public void setPreferred(Boolean preferred) {
+        this.preferred = preferred;
+    }
+
+    public String getNcm() {
+        return ncm;
+    }
+
+    public void setNcm(String ncm) {
+        this.ncm = ncm;
+    }
+
+    public String getCsosn() {
+        return csosn;
+    }
+
+    public void setCsosn(String csosn) {
+        this.csosn = csosn;
     }
 }
