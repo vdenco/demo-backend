@@ -5,4 +5,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @CrossOrigin
 public interface UserModelRepository extends PagingAndSortingRepository<UserModel, Long> {
+
+    UserModel findByLogin(String login);
 }

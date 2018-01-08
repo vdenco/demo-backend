@@ -1,8 +1,6 @@
-package com.example.demo.cxReceives;
+package com.example.demo.cxExtra;
 
-import com.example.demo.afterSales.AfterSalesModel;
 import com.example.demo.client.ClientModel;
-import com.example.demo.sale.SaleModel;
 import com.example.demo.table.TableModel;
 import com.example.demo.users.UserModel;
 import org.hibernate.annotations.CreationTimestamp;
@@ -12,7 +10,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
-public class CxReceivesModel {
+public class CxExtraModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -50,8 +48,13 @@ public class CxReceivesModel {
 
     BigDecimal change;
 
-    @OneToOne
-    AfterSalesModel afterSalesModel;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public UserModel getUserModel() {
         return userModel;
@@ -123,14 +126,6 @@ public class CxReceivesModel {
 
     public void setDebitCard(BigDecimal debitCard) {
         this.debitCard = debitCard;
-    }
-
-    public AfterSalesModel getAfterSalesModel() {
-        return afterSalesModel;
-    }
-
-    public void setAfterSalesModel(AfterSalesModel afterSalesModel) {
-        this.afterSalesModel = afterSalesModel;
     }
 
     public Date getDate() {

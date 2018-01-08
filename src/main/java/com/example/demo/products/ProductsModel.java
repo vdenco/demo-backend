@@ -2,16 +2,14 @@ package com.example.demo.products;
 
 import com.example.demo.group.GroupModel;
 import com.example.demo.printers.PrintersModel;
+import com.example.demo.sale.SaleModel;
+import com.example.demo.security.BaseModel;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-public class ProductsModel {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+public class ProductsModel extends BaseModel{
 
     String name;
 
@@ -36,14 +34,6 @@ public class ProductsModel {
     String ncm;
 
     String csosn;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;

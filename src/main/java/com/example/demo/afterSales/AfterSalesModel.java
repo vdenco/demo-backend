@@ -16,7 +16,7 @@ public class AfterSalesModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @OneToOne
+    @ManyToOne
     ProductsModel produtos;
 
     @OneToOne
